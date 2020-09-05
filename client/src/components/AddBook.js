@@ -32,9 +32,10 @@ class AddBook extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    console.log(this.state);
     this.props.addBookmutation({
       variables: {
-        name: this.state.name,
+        name: this.state.bookname,
         genre: this.state.genre,
         authorId: this.state.authorId,
       },
@@ -66,6 +67,7 @@ class AddBook extends Component {
         <div className="fields">
           <label>Author: </label>
           <select onChange={(e) => this.setState({ authorId: e.target.value })}>
+            <option value={null}>Select</option>
             {this.displayAuthors()}
           </select>
         </div>

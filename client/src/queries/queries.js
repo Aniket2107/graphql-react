@@ -20,7 +20,7 @@ export const getbooklist = gql`
 `;
 
 export const getBookQuery = gql`
-  query($id: ID!) {
+  query($id: ID) {
     book(id: $id) {
       name
       genre

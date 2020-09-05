@@ -16,6 +16,7 @@ class BookList extends Component {
       return data.books.map((book) => {
         return (
           <li
+            id="book-li"
             key={book.id}
             onClick={(e) => this.setState({ selected: book.id })}
           >
@@ -29,7 +30,7 @@ class BookList extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="booklist">
+      <div className="book-list">
         <ul>{this.displayBooks()}</ul>
         <BookDetails bookId={this.state.selected} />
       </div>
